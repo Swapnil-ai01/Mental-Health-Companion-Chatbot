@@ -7,7 +7,7 @@ import google.generativeai as genai
 from datetime import datetime
 
 
-genai.configure(os.getenv('api_key=GOOGLE_API_KEY'))
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
 if "chat_history" not in st.session_state:
