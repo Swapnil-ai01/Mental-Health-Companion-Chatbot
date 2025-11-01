@@ -6,8 +6,10 @@ import os
 import google.generativeai as genai
 from datetime import datetime
 
-GOOGLE_API_KEY= "AIzaSyBVOhNebN-wiQRc_bMm62GVdJ-nXIrgW_o" 
-genai.configure(api_key=GOOGLE_API_KEY)
+
+def configure():
+    load_dotenv()
+
 
 if "chat_history" not in st.session_state:
     st.session_state.chat_history=[]
@@ -127,4 +129,4 @@ with tab2:
         for entry in st.session_state.dia_entries:
             st.markdown(f"**Date:** {entry['date']}")
             st.markdown(entry['text'])
-
+            st.markdown("---")
